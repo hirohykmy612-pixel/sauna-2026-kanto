@@ -1,16 +1,53 @@
-/* サウナイキタイ風：温かみ・木・アースカラー */
+/* ========================================
+   2026 関東サウナ — 参考画像に基づく
+   明るいオフホワイト・クリーン・モダン
+   ======================================== */
+
 :root {
-  --color-bg: #faf7f2;
-  --color-surface: #fff;
-  --color-primary: #c45c26;
-  --color-primary-dark: #9e4519;
-  --color-wood: #8b6914;
-  --color-text: #2c2c2c;
-  --color-text-muted: #5c5c5c;
-  --color-border: #e8e0d5;
-  --font-sans: "Noto Sans JP", sans-serif;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  /* ベース：明るいオフホワイト・ライトベージュ */
+  --bg: #f7f6f3;
+  --bg-card: #fff;
+  --border: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.1);
+
+  /* テキスト：濃いグレー中心 */
+  --text: #333333;
+  --text-soft: #555555;
+  --text-muted: #777777;
+  --text-dim: #999999;
+
+  /* アクセント：ティールグリーン（小見出し・ラベル） */
+  --teal: #5a8a82;
+  --teal-soft: #6b9d94;
+  --teal-bg: rgba(90, 138, 130, 0.08);
+
+  /* アクセント：青（カード・エリア） */
+  --blue: #5b7a9e;
+  --blue-soft: #6d8aab;
+  --blue-bg: rgba(91, 122, 158, 0.06);
+
+  /* アクセント：ミントグリーン（カード背景用） */
+  --mint: #e8f2ef;
+  --mint-border: rgba(90, 138, 130, 0.12);
+
+  /* アクセント：ピーチオレンジ（カード背景用） */
+  --peach: #f5ebe8;
+  --peach-border: rgba(180, 120, 90, 0.12);
+
+  /* アクセント：ゴールド（リンク・強調） */
+  --gold: #b8926a;
+  --gold-soft: #c9a87d;
+  --gold-bg: rgba(184, 146, 106, 0.08);
+
+  /* グレーカード（参考画像の左カード） */
+  --grey-card: #f2f2f0;
+  --grey-border: rgba(0, 0, 0, 0.06);
+
+  --font-sans: "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Noto Serif JP", serif;
   --radius: 12px;
+  --space: 1.5rem;
+  --max-width: 720px;
 }
 
 *,
@@ -27,207 +64,322 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
-.header {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, #d97a3d 100%);
-  color: #fff;
-  padding: 2rem 1.5rem;
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- Hero（クリーン・広々） ----- */
+.hero {
+  position: relative;
+  padding: clamp(4rem, 14vw, 7rem) var(--space) clamp(3.5rem, 10vw, 5rem);
   text-align: center;
+  background: var(--bg);
 }
 
-.header-inner {
-  max-width: 720px;
+.hero-inner {
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
-.logo {
-  margin: 0 0 0.5rem;
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.hero-label {
+  margin: 0 0 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
 }
 
-.tagline {
+.hero-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.hero-lead {
   margin: 0;
   font-size: 0.95rem;
-  opacity: 0.95;
-  font-weight: 500;
+  color: var(--text-soft);
+  max-width: 28em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.main {
-  max-width: 720px;
+.hero::after {
+  display: none;
+}
+
+/* ----- Content ----- */
+.content {
+  flex: 1;
+  padding: 0 var(--space) 4rem;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1.5rem 3rem;
+  width: 100%;
 }
 
-.intro,
-.reference {
-  background: var(--color-surface);
-  padding: 1.5rem 1.75rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 2rem;
+.section {
+  margin-bottom: 3.5rem;
 }
 
-.intro h2,
-.reference h2,
-.facilities h2 {
-  margin: 0 0 1rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-}
-
-.intro p,
-.reference p {
-  margin: 0;
-  color: var(--color-text);
-}
-
-.intro a,
-.reference a {
-  color: var(--color-primary);
-  text-decoration: none;
+.section-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
   font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
 }
 
-.intro a:hover,
-.reference a:hover {
-  text-decoration: underline;
+.section-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
 }
 
-.facilities h2 {
-  padding-left: 0.25rem;
-  margin-bottom: 1.5rem;
+.section-title .count {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ----- Intro ----- */
+.intro-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  max-width: 42em;
+}
+
+.intro-text strong {
+  color: var(--text);
+}
+
+.intro-text a {
+  color: var(--teal-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.intro-text a:hover {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+/* ----- Facility list ----- */
+.facility-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .facility {
-  background: var(--color-surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--color-border);
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
-.facility-header {
+/* カード：1枚の背景で内部要素が重ならないよう単一のブロックに */
+.card {
+  display: block;
+  position: relative;
+  overflow: visible;
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  background: var(--bg-card);
+}
+
+.card--grey {
+  background: var(--grey-card);
+  border-color: var(--grey-border);
+}
+
+.card--mint {
+  background: var(--mint);
+  border-color: var(--mint-border);
+}
+
+.card--peach {
+  background: var(--peach);
+  border-color: var(--peach-border);
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-strong);
+}
+
+.card-top {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
 }
 
 .badge {
   display: inline-block;
   padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
   font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
-.badge.area-tokyo {
-  background: #e8f4fc;
-  color: #0d6ea1;
-}
-
-.badge.area-chiba {
-  background: #e8f5e9;
-  color: #2e7d32;
+.badge.area {
+  background: var(--blue-bg);
+  color: var(--blue-soft);
 }
 
 .badge.date {
-  background: #fff3e0;
-  color: var(--color-primary-dark);
+  background: var(--teal-bg);
+  color: var(--teal);
 }
 
-.facility-name {
-  margin: 0 0 0.75rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-text);
+.card-title {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
   line-height: 1.4;
 }
 
-.facility-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.card-meta {
+  margin: 0 0 0.85rem;
+  padding: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.card-lead {
+  margin: 0 0 0.85rem;
+  padding: 0;
   font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1rem;
+  color: var(--text-soft);
+  line-height: 1.65;
 }
 
-.facility-body {
-  font-size: 0.95rem;
-}
-
-.facility-lead {
+.card-features {
   margin: 0 0 1rem;
-  color: var(--color-text);
+  padding: 0 0 0 1.2rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
 }
 
-.feature-list {
-  margin: 0 0 1rem;
-  padding-left: 1.25rem;
-  color: var(--color-text-muted);
+.card-features li {
+  margin-bottom: 0.25rem;
+  padding: 0;
 }
 
-.feature-list li {
-  margin-bottom: 0.35rem;
-}
-
-.facility-links {
+.card-links {
   margin: 0;
-  font-size: 0.9rem;
+  padding: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
-.facility-links a {
-  color: var(--color-primary);
+.card-links a {
+  color: var(--gold);
   text-decoration: none;
-  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-.facility-links a:hover {
-  text-decoration: underline;
+.card-links a:hover {
+  color: var(--gold-soft);
+  border-bottom-color: var(--gold);
 }
 
+.card-links a + a {
+  margin-left: 1rem;
+}
+
+/* ----- Reference ----- */
+.ref-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+.ref-list a {
+  color: var(--teal-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ref-list a:hover {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+/* ----- Footer ----- */
 .footer {
-  background: #2c2c2c;
-  color: #aaa;
-  padding: 1.5rem 1.5rem 2rem;
+  padding: 2.5rem var(--space) 3rem;
+  border-top: 1px solid var(--border);
   text-align: center;
-  font-size: 0.85rem;
+  background: var(--bg);
 }
 
-.footer p {
-  margin: 0 0 0.5rem;
-  max-width: 560px;
+.footer-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 36em;
   margin-left: auto;
   margin-right: auto;
 }
 
-.footer p:last-child {
-  margin-bottom: 0;
+.footer-credit {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
 }
 
-.credit {
-  margin-top: 0.75rem !important;
-  color: #888;
-  font-size: 0.8rem;
-}
-
-@media (min-width: 600px) {
-  .logo {
-    font-size: 2rem;
+/* ----- Responsive ----- */
+@media (min-width: 640px) {
+  .content {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
-  .facility-meta {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  .card {
+    padding: 2rem 2.25rem;
+  }
+
+  .card-title {
+    font-size: 1.45rem;
   }
 }
