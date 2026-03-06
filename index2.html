@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サウナ旅行おすすめ宿20選 | 90℃以上の高温サウナ厳選</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-dark: #1F2937;
+            --accent-gold: #EAB308;
+            --bg-soft: #F9FAFB;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--main-dark);
+        }
+        .sauna-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .price-bar {
+            height: 4px;
+            border-radius: 2px;
+            background: #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+        .price-fill {
+            height: 100%;
+            background: var(--accent-gold);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="p-1.5 bg-[#EAB308] rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" /></svg>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-[#1F2937]">SAUNA TRAVEL</span>
+                </div>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                    <a href="#" class="hover:text-[#EAB308]">エリアから探す</a>
+                    <a href="#" class="hover:text-[#EAB308]">こだわり条件</a>
+                    <a href="#" class="hover:text-[#EAB308]">ガイド</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero-gradient py-20 px-4 text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-[#EAB308] font-bold tracking-widest text-sm mb-4 uppercase">Selected 20 Facilities</p>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                サウナ旅行おすすめ宿<br>
+                <span class="text-[#EAB308]">高温サウナのあるホテル・温泉旅館20選</span>
+            </h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                日本全国から、サウナの質（温度・水風呂・外気浴）を最優先に厳選。<br>
+                共用大浴場で圧倒的な「ととのい」を体験できる、1泊2万〜5万円の宿をまとめました。
+            </p>
+        </div>
+    </div>
+
+    <!-- Filters & Info -->
+    <div class="max-w-7xl mx-auto px-4 mt-12">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-4">
+                <span class="text-xs font-bold text-gray-400">価格帯の見方:</span>
+                <div class="flex items-center space-x-2 text-[10px] font-bold">
+                    <div class="flex items-center space-x-1"><div class="w-3 h-1 bg-gray-200 rounded"></div><span>〜3万</span></div>
+                    <div class="flex items-center space-x-1"><div class="w-3 h-1 bg-[#EAB308] rounded opacity-50"></div><span>〜4万</span></div>
+                    <div class="flex items-center space-x-1"><div class="w-3 h-1 bg-[#EAB308] rounded"></div><span>〜5万</span></div>
+                </div>
+            </div>
+            <div class="text-xs text-gray-500">※料金は時期・プランにより変動します</div>
+        </div>
+    </div>
+
+    <!-- Facility Grid -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div id="facility-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- JS will populate here -->
+        </div>
+    </div>
+
+    <footer class="bg-[#1F2937] text-white py-12 px-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex justify-center space-x-2 mb-6">
+                <div class="w-8 h-8 bg-[#EAB308] rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-[#1F2937]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" /></svg>
+                </div>
+                <span class="text-xl font-bold">SAUNA TRAVEL</span>
+            </div>
+            <p class="text-gray-400 text-xs">&copy; 2024 SAUNA TRAVEL JP. 日本全国のサウナ旅を応援します。</p>
+        </div>
+    </footer>
+
+    <script>
+        const facilities = [
+            { id: 1, name: "北こぶし知床 ホテル＆リゾート", area: "北海道・知床", temp: 95, water: 15, outdoor: "あり", priceTier: 3, priceLabel: "4.5万円〜", description: "流氷を眺めるカクウナ・ウーナは日本最高峰の体験。" },
+            { id: 2, name: "阿寒湖 鶴雅ウイングス", area: "北海道・阿寒", temp: 92, water: 16, outdoor: "あり", priceTier: 2, priceLabel: "3.5万円〜", description: "圧倒的スケールの展望サウナと阿寒の自然が融合。" },
+            { id: 3, name: "星野リゾート 青森屋", area: "青森・三沢", temp: 90, water: 17, outdoor: "あり", priceTier: 3, priceLabel: "4.8万円〜", description: "浮湯の絶景と、青森の文化を感じる極上サウナ。" },
+            { id: 4, name: "ホテルマウント富士", area: "山梨・山中湖", temp: 94, water: 14, outdoor: "あり", priceTier: 2, priceLabel: "3.2万円〜", description: "サウナーの聖地。富士山を眺めながらの天然水水風呂。" },
+            { id: 5, name: "御船山楽園ホテル らかんの湯", area: "佐賀・武雄", temp: 98, water: 16, outdoor: "あり", priceTier: 3, priceLabel: "5.0万円〜", description: "サウナシュラン3年連続1位。全ての次元が違う体験。" },
+            { id: 6, name: "8HOTEL CHIGASAKI", area: "神奈川・茅ヶ崎", temp: 92, water: 15, outdoor: "あり", priceTier: 1, priceLabel: "2.2万円〜", description: "海外のようなプールサイドサウナ。カジュアルに楽しむ。" },
+            { id: 7, name: "神戸みなと温泉 蓮", area: "兵庫・神戸", temp: 90, water: 16, outdoor: "あり", priceTier: 3, priceLabel: "4.2万円〜", description: "港を望む絶景外気浴と、高品質なフィンランド式サウナ。" },
+            { id: 8, name: "由縁 別邸 代田", area: "東京・世田谷", temp: 92, water: 16, outdoor: "あり", priceTier: 3, priceLabel: "4.5万円〜", description: "都心で箱根の湯と本格サウナ。和モダンな静寂空間。" },
+            { id: 9, name: "カンデオホテルズ 東京六本木", area: "東京・六本木", temp: 95, water: 17, outdoor: "あり", priceTier: 2, priceLabel: "3.8万円〜", description: "スカイスパから東京タワーを望む。最強の都市型サウナ。" },
+            { id: 10, name: "金沢 彩の庭ホテル", area: "石川・金沢", temp: 90, water: 15, outdoor: "あり", priceTier: 2, priceLabel: "2.8万円〜", description: "金沢の旬を感じる庭園と、白山水系の水風呂。" },
+            { id: 11, name: "HOTEL WOOD 高山", area: "岐阜・高山", temp: 92, water: 16, outdoor: "あり", priceTier: 1, priceLabel: "2.5万円〜", description: "飛騨の木材を贅沢に使ったサウナ室。香りが最高。" },
+            { id: 12, name: "白馬 樅の木ホテル", area: "長野・白馬", temp: 90, water: 14, outdoor: "あり", priceTier: 2, priceLabel: "3.0万円〜", description: "北アルプスの伏流水風呂。森林浴サウナの頂点。" },
+            { id: 13, name: "龍宮城スパホテル三日月 富士見亭", area: "千葉・木更津", temp: 94, water: 17, outdoor: "あり", priceTier: 3, priceLabel: "4.8万円〜", description: "東京湾を一望するサウナ。ファミリーでも高級感抜群。" },
+            { id: 14, name: "ホテルニューウイング", area: "東京・錦糸町", temp: 98, water: 14, outdoor: "なし", priceTier: 1, priceLabel: "2.0万円〜", description: "伝説のジールサウナ。宿泊して何度も楽しみたい聖地。" },
+            { id: 15, name: "ガーデンテラス福岡", area: "福岡・福岡市", temp: 90, water: 16, outdoor: "あり", priceTier: 3, priceLabel: "4.5万円〜", description: "洗練されたラグジュアリー空間で贅沢にととのう。" },
+            { id: 16, name: "ドーミーインPREMIUM小樽", area: "北海道・小樽", temp: 96, water: 15, outdoor: "あり", priceTier: 1, priceLabel: "2.2万円〜", description: "ドーミーイン最高峰。朝食とサウナの質が異常に高い。" },
+            { id: 17, name: "展望露天の宿 湯屋がーでん", area: "熊本・阿蘇", temp: 92, water: 16, outdoor: "あり", priceTier: 2, priceLabel: "3.2万円〜", description: "阿蘇の絶景と溶岩石サウナ。水は阿蘇の天然湧水。" },
+            { id: 18, name: "伝承の宿 つるや", area: "山形・蔵王", temp: 90, water: 15, outdoor: "あり", priceTier: 2, priceLabel: "3.5万円〜", description: "強酸性の温泉と、本格高温サウナのコンビネーション。" },
+            { id: 19, name: "カンデオホテルズ 岡山", area: "岡山・岡山", temp: 93, water: 16, outdoor: "あり", priceTier: 1, priceLabel: "2.3万円〜", description: "地上階のスカイスパ。瀬戸内の風を感じる外気浴。" },
+            { id: 20, name: "箱根・強羅 佳ら久", area: "神奈川・箱根", temp: 90, water: 17, outdoor: "あり", priceTier: 3, priceLabel: "5.0万円〜", description: "最高級旅館の共用サウナ。眺望も質もこだわり抜かれた空間。" }
+        ];
+
+        function renderFacilities() {
+            const grid = document.getElementById('facility-grid');
+            grid.innerHTML = facilities.map(f => `
+                <div class="sauna-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300">
+                    <div class="relative h-48 bg-gray-200">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400 text-xs">
+                            [Image: ${f.name}]
+                        </div>
+                        <div class="absolute top-3 left-3 bg-[#1F2937]/80 backdrop-blur px-2 py-1 rounded text-[10px] text-white font-bold flex items-center">
+                            <svg class="w-3 h-3 mr-1 text-[#EAB308]" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                            ${f.area}
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold mb-2 h-14 leading-tight">${f.name}</h3>
+                        
+                        <div class="flex space-x-2 mb-4">
+                            <div class="flex-1 bg-red-50 p-2 rounded-lg text-center">
+                                <span class="block text-[10px] text-red-400 font-bold">サウナ</span>
+                                <span class="text-lg font-bold text-red-600">${f.temp}℃</span>
+                            </div>
+                            <div class="flex-1 bg-blue-50 p-2 rounded-lg text-center">
+                                <span class="block text-[10px] text-blue-400 font-bold">水風呂</span>
+                                <span class="text-lg font-bold text-blue-600">${f.water}℃</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center"><svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>外気浴: ${f.outdoor}</span>
+                            <span class="font-bold text-[#1F2937]">${f.priceLabel}</span>
+                        </div>
+
+                        <!-- Price Visualizer -->
+                        <div class="mb-5">
+                            <div class="flex justify-between text-[8px] uppercase font-bold text-gray-400 mb-1">
+                                <span>Budget Level</span>
+                                <span>Max 50k</span>
+                            </div>
+                            <div class="price-bar">
+                                <div class="price-fill" style="width: ${(f.priceTier / 3) * 100}%"></div>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-3 bg-[#1F2937] text-white rounded-xl text-sm font-bold hover:bg-black transition-colors">
+                            詳細・空室確認
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        window.onload = renderFacilities;
+    </script>
+</body>
+</html>
+
